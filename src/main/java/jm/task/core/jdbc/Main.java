@@ -1,11 +1,11 @@
 package jm.task.core.jdbc;
 
 import jm.task.core.jdbc.dao.UserDao;
-import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
+import jm.task.core.jdbc.dao.UserDaoHibernateImpl;
 
 public class Main {
     public static void main(String[] args) {
-        UserDao user = new UserDaoJDBCImpl();
+        UserDao user = new UserDaoHibernateImpl();
 
         user.createUsersTable();
 
