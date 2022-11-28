@@ -22,9 +22,7 @@ public class UserDaoHibernateImpl implements UserDao {
                     "name VARCHAR(255), lastname VARCHAR(255), age INT)").executeUpdate();
             transaction.commit();
         } catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
-            }
+
             e.printStackTrace();
         }
     }
@@ -37,9 +35,7 @@ public class UserDaoHibernateImpl implements UserDao {
             session.createNativeQuery("DROP TABLE IF EXISTS user").executeUpdate();
             transaction.commit();
         } catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
-            }
+
             e.printStackTrace();
         }
     }
@@ -78,9 +74,7 @@ public class UserDaoHibernateImpl implements UserDao {
             list = session.createQuery("from User").getResultList();
             transaction.commit();
         } catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
-            }
+
             e.printStackTrace();
         }
         return list;
@@ -94,9 +88,7 @@ public class UserDaoHibernateImpl implements UserDao {
             session.createNativeQuery("DROP TABLE user").executeUpdate();
             transaction.commit();
         } catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
-            }
+
             e.printStackTrace();
         }
     }
